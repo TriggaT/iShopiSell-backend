@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
 
     def create 
         product = Product.new(product_params)
+        binding.pry
         if product.save 
             render json: product
         else 
@@ -24,7 +25,7 @@ class ProductsController < ApplicationController
     private 
 
     def product_params
-        params.require(:user).permit(:name, :price, :quantity, :user_id)
+        params.require(:product).permit(:name, :price, :quantity, :user_id)
     end 
 
     
