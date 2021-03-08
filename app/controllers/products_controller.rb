@@ -10,12 +10,21 @@ class ProductsController < ApplicationController
         render json: product
     end 
 
+    def create 
+        product = Product.new(product_params)
+        if product.save 
+            render json: product
+        else 
+            render json: product.errors, status: :unprocessable_entity
+        end 
+    end 
+
 
 
     private 
 
     def product_params
-        params.require(:user).permit(:name, :account_balance)
+        params.require(:user).permit(:name, :price, :quantity, :user_id)
     end 
 
     
