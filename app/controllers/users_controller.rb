@@ -19,6 +19,16 @@ class UsersController < ApplicationController
         end 
     end 
 
+    def update
+        user = User.find_by(id: params[:id])
+        User.update(user_params)
+        if user.save 
+            render json: user
+        else 
+            render json: user.errors, status: :unprocessable_entity
+        end 
+    end 
+
     private 
 
     def user_params
