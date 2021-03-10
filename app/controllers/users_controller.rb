@@ -21,7 +21,8 @@ class UsersController < ApplicationController
 
     def update
         user = User.find_by(id: params[:id])
-        User.update(user_params)
+        binding.pry 
+        user.update(user_params)
         if user.save 
             render json: user
         else 
