@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-admin = User.create(name:"adminBank", account_balance: "200")
-jeff = User.create(name: "Jeff", account_balance: "1000") 
-neisha = User.create(name: "Neisha", account_balance: "500")
-trey = User.create(name: "Trey", account_balance: "200")
+admin = User.create(name:"adminBank", account_balance: "200", password:"iShopiSell")
+jeff = User.create(name: "Jeff", account_balance: "1000", password:123456) 
+neisha = User.create(name: "Neisha", account_balance: "500", password:123456)
+trey = User.create(name: "Trey", account_balance: "200", password:123456)
 
 music = Product.create(name: "Music CDs", price: 15, quantity: 50, user_id: 4)
 personal_assistant = Product.create(name: "Alexa", price: 50, quantity: 30, user_id:2 )

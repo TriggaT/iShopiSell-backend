@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_12_060730) do
+ActiveRecord::Schema.define(version: 2021_03_04_212431) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 2021_03_12_060730) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.integer "account_balance", default: 200
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password"
   end
 
 end
