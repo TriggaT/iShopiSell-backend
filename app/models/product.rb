@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
     belongs_to :user
 
+    validates :name,  :price, :quantity, presence: true
+
     def self.array_to_json 
         self.all.map do |p|
             p.instance_to_json 
